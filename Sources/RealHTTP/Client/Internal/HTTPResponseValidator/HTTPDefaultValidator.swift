@@ -58,7 +58,7 @@ open class HTTPDefaultValidator: HTTPValidator {
     ///   - request: origin request.
     /// - Returns: HTTPResponseValidatorAction
     ///
-    open func validate(response: HTTPResponse, forRequest request: HTTPRequest) -> HTTPResponseValidatorResult {
+    open func validate(response: HTTPResponse, forRequest request: HTTPRequest) async -> HTTPResponseValidatorResult {
         if let error = response.error,
            let allowedRetryMode = allowedRetry(forResponse: response, error: error) {
             // Some errors allows retry of the call.

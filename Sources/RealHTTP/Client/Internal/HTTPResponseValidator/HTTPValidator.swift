@@ -28,7 +28,7 @@ public protocol HTTPValidator {
     /// - Parameters:
     ///   - response: response to validate.
     ///   - request: origin request.
-    func validate(response: HTTPResponse, forRequest request: HTTPRequest) -> HTTPResponseValidatorResult
+    func validate(response: HTTPResponse, forRequest request: HTTPRequest) async -> HTTPResponseValidatorResult
     
 }
 

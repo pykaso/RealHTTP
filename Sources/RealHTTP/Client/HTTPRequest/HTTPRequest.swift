@@ -179,7 +179,7 @@ public class HTTPRequest: CustomStringConvertible {
     /// Alternate requests cannot support retry strategy,
     /// this property is automatically set by the client's loader
     /// to avoid recursive check.
-    internal var isAltRequest = false
+    public var isAltRequest = false
     
     /// URLComponents of the network request.
     internal var urlComponents = URLComponents()

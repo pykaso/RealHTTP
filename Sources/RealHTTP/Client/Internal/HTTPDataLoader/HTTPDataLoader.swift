@@ -93,7 +93,7 @@ internal class HTTPDataLoader: NSObject,
             /// Once we receive the response we would to use validators to validate received response.
             /// It evaluates each validator in order and stops to the first one who send a non `.success`
             /// response. Validator return the action to perform in case of failure.
-            let validationAction = self.client!.validate(response: response, forRequest: request)
+            let validationAction = await self.client!.validate(response: response, forRequest: request)
 
             if request.isAltRequest {
                 // request pass validator but ignore it's response. you can retry an alt request.
