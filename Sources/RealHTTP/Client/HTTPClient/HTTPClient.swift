@@ -149,9 +149,9 @@ public class HTTPClient {
     ///   - response: response received from server.
     ///   - request: origin request.
     /// - Returns: HTTPResponseValidatorAction
-    internal func validate(response: HTTPResponse, forRequest request: HTTPRequest) -> HTTPResponseValidatorResult {
+    internal func validate(response: HTTPResponse, forRequest request: HTTPRequest) async -> HTTPResponseValidatorResult {
         for validator in validators {
-            let result = validator.validate(response: response, forRequest: request)
+            let result = await validator.validate(response: response, forRequest: request)
             guard case .nextValidator = result else {
                 return result
             }

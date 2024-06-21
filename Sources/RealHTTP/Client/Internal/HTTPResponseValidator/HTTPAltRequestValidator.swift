@@ -93,7 +93,7 @@ open class HTTPAltRequestValidator: HTTPValidator {
     
     // MARK: - Protocol Conformance
     
-    open func validate(response: HTTPResponse, forRequest request: HTTPRequest) -> HTTPResponseValidatorResult {
+    open func validate(response: HTTPResponse, forRequest request: HTTPRequest) async -> HTTPResponseValidatorResult {
         guard statusCodes.contains(response.statusCode) else {
             // if received status code for this request is not inside the triggerable status codes we'll skip the validator.
             return .nextValidator
